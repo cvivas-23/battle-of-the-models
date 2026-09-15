@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Battle of the Models — UFC Octagon Edition · QF AI</title>
+<link rel="stylesheet" href="styles.css">
+<script src="emblems.js"></script>
+</head>
+<body>
+
+<nav class="topbar"><div class="wrap">
+  <a class="brand" href="index.html">BATTLE OF THE <em>MODELS</em></a>
+  <div class="topnav">
+    <a class="f-sd25" href="seedance-25.html">Seedance 2.5</a>
+    <a class="f-sd20" href="seedance-20.html">Seedance 2.0</a>
+    <a class="f-kling" href="kling-3.html">Kling 3.0</a>
+    <a class="f-omni" href="omni-flash.html">Gemini Omni Flash</a>
+  </div>
+</div></nav>
+
+<header class="poster"><div class="wrap">
+  <span class="kicker">QuickFrame AI · Model Selection Event · Aug 2026</span>
+  <h1 class="poster-title">Battle of<br>the Models</h1>
+  <p class="poster-sub">Four fighters. One octagon. We ran them through real commercial production —
+  <b>120 paired A/B tests, ffprobe-verified specs, and field notes the official docs don't tell you.</b>
+  This is our verdict, cross-checked against what creators are saying on Reddit and X.</p>
+</div></header>
+
+<!-- ═══ THE OCTAGON ═══ -->
+<div class="wrap">
+  <div class="octagon-stage">
+    <svg class="oct" viewBox="0 0 400 408" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <defs>
+        <radialGradient id="floor" cx="50%" cy="50%" r="60%">
+          <stop offset="0%" stop-color="#1a2233"/>
+          <stop offset="78%" stop-color="#0d1119"/>
+          <stop offset="100%" stop-color="#0a0d14"/>
+        </radialGradient>
+      </defs>
+      <polygon points="120,8 280,8 392,120 392,288 280,400 120,400 8,288 8,120" fill="url(#floor)" stroke="#2a3550" stroke-width="3"/>
+      <polygon points="120,8 280,8 392,120 392,288 280,400 120,400 8,288 8,120" fill="none" stroke="rgba(245,185,66,.22)" stroke-width="1.5" transform="scale(.97) translate(6,7)"/>
+      <circle cx="200" cy="204" r="86" fill="none" stroke="rgba(245,185,66,.30)" stroke-width="2" stroke-dasharray="4 7"/>
+      <line x1="200" y1="118" x2="200" y2="290" stroke="rgba(245,185,66,.14)" stroke-width="2"/>
+    </svg>
+
+    <a class="fighter-slot slot-nw" href="seedance-20.html" style="--fc: var(--sd20)">
+      <span class="emblem" data-emblem="sd20"></span>
+      <span class="fname">Seedance 2.0</span><span class="fnick">“The Beatmaster” · ByteDance</span>
+    </a>
+    <a class="fighter-slot slot-ne" href="seedance-25.html" style="--fc: var(--sd25)">
+      <span class="emblem" data-emblem="sd25"></span>
+      <span class="fname">Seedance 2.5</span><span class="fnick">“The Tornado” · ByteDance</span>
+    </a>
+    <a class="fighter-slot slot-sw" href="kling-3.html" style="--fc: var(--kling)">
+      <span class="emblem" data-emblem="kling"></span>
+      <span class="fname">Kling 3.0</span><span class="fnick">“The Emperor” · Kuaishou</span>
+    </a>
+    <a class="fighter-slot slot-se" href="omni-flash.html" style="--fc: var(--omni)">
+      <span class="emblem" data-emblem="omni"></span>
+      <span class="fname">Gemini Omni Flash</span><span class="fnick">“The Director” · Google DeepMind</span>
+    </a>
+
+    <div class="center-card">
+      <div class="cc-main">Main Event</div>
+      <div class="cc-sub">4-way · no decision round</div>
+      <span class="vs-badge">WHO WINS WHAT?</span>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ THE CARD ═══ -->
+<section id="card"><div class="wrap">
+  <div class="sec-head"><span class="num">01</span><h2 class="sec-title">The Card</h2></div>
+  <p class="sec-lede">Every fighter's record card. The stats below are ffprobe-verified from our own generations — not marketing pages.</p>
+  <div class="div-grid mt-m">
+
+    <a class="div-card" href="seedance-25.html" style="--fc: var(--sd25); text-decoration:none; color:inherit">
+      <span class="emblem" data-emblem="sd25" style="width:74px"></span>
+      <div class="div-name mt-s">Seedance 2.5 — “The Tornado”</div>
+      <p>The quad-modal heavyweight. 50 references, 30s single pass, real video editing — but it fights at 720p. Launched Jul 31, 2026.</p>
+      <div class="div-winner"><span class="dot"></span><span>Full dossier →</span></div>
+    </a>
+
+    <a class="div-card" href="seedance-20.html" style="--fc: var(--sd20); text-decoration:none; color:inherit">
+      <span class="emblem" data-emblem="sd20" style="width:74px"></span>
+      <div class="div-name mt-s">Seedance 2.0 — “The Beatmaster”</div>
+      <p>The all-in-one reference fighter that still delivers 1080p/4K and cuts to the bass hit automatically. Not retired — it's the finisher.</p>
+      <div class="div-winner"><span class="dot"></span><span>Full dossier →</span></div>
+    </a>
+
+    <a class="div-card" href="kling-3.html" style="--fc: var(--kling); text-decoration:none; color:inherit">
+      <span class="emblem" data-emblem="kling" style="width:74px"></span>
+      <div class="div-name mt-s">Kling 3.0 — “The Emperor”</div>
+      <p>First model with native 4K at 60fps and a multi-shot storyboard brain. The broadcast-grade workhorse of the card.</p>
+      <div class="div-winner"><span class="dot"></span><span>Full dossier →</span></div>
+    </a>
+
+    <a class="div-card" href="omni-flash.html" style="--fc: var(--omni); text-decoration:none; color:inherit">
+      <span class="emblem" data-emblem="omni" style="width:74px"></span>
+      <div class="div-name mt-s">Gemini Omni Flash — “The Director”</div>
+      <p>The only fighter you keep directing after the bell. Conversational delta edits, intent-based prompting, legible on-screen text.</p>
+      <div class="div-winner"><span class="dot"></span><span>Full dossier →</span></div>
+    </a>
+
+  </div>
+</div></section>
+
+<!-- ═══ DIVISIONS ═══ -->
+<section id="divisions"><div class="wrap">
+  <div class="sec-head"><span class="num">02</span><h2 class="sec-title">Divisions — Who Wins What</h2></div>
+  <p class="sec-lede">There is no single champion. Every job in a commercial is its own weight class, and the pick changes with it.</p>
+  <div class="div-grid mt-m">
+
+    <div class="div-card" style="--fc: var(--kling)">
+      <div class="div-name">Broadcast / CTV Delivery</div>
+      <div class="div-winner"><span class="dot"></span><a href="kling-3.html">Kling 3.0</a></div>
+      <p>The only fighter with native 4K@60 — no upscale pass, no regression. Seedance 2.5 and Omni cap at 720p.</p>
+    </div>
+
+    <div class="div-card" style="--fc: var(--sd25)">
+      <div class="div-name">Multi-Character Ensemble</div>
+      <div class="div-winner"><span class="dot"></span><a href="seedance-25.html">Seedance 2.5</a></div>
+      <p>50 reference materials with per-reference <b>exclusions</b>. Four-plus named subjects each bound to their own ref — nothing else on the card takes this.</p>
+    </div>
+
+    <div class="div-card" style="--fc: var(--sd25)">
+      <div class="div-name">30s Narrative, One Generation</div>
+      <div class="div-winner"><span class="dot"></span><a href="seedance-25.html">Seedance 2.5</a></div>
+      <p>Stages + declared end states carry identity across a full 30s pass, plus forward/backward extension and generated transitions.</p>
+    </div>
+
+    <div class="div-card" style="--fc: var(--sd20)">
+      <div class="div-name">Music Video / Beat-Matched Montage</div>
+      <div class="div-winner"><span class="dot"></span><a href="seedance-20.html">Seedance 2.0</a></div>
+      <p>Attach the track, name the drops — cuts land on the bass automatically. Its strongest native capability, still unmatched here.</p>
+    </div>
+
+    <div class="div-card" style="--fc: var(--sd20)">
+      <div class="div-name">1080p / 4K Finish (Seedance route)</div>
+      <div class="div-winner"><span class="dot"></span><a href="seedance-20.html">Seedance 2.0</a></div>
+      <p>The two-model pipeline: 2.5 for duration and editing, 2.0 for final resolution at ~⅔ the cost. Our house rule since Aug 2026.</p>
+    </div>
+
+    <div class="div-card" style="--fc: var(--omni)">
+      <div class="div-name">Iterative Art Direction</div>
+      <div class="div-winner"><span class="dot"></span><a href="omni-flash.html">Gemini Omni Flash</a></div>
+      <p>The only conversational editor: “change the butterfly to a bee” on the same clip, turn by turn. Edits accumulate — they don't reset.</p>
+    </div>
+
+    <div class="div-card" style="--fc: var(--omni)">
+      <div class="div-name">On-Screen Text</div>
+      <div class="div-winner"><span class="dot"></span><a href="omni-flash.html">Gemini Omni Flash</a></div>
+      <p>Short titles and captions render reliably — dense multi-line text still garbles. Seedance 2.5 improved here too (wordmarks held at 4 scales).</p>
+    </div>
+
+    <div class="div-card" style="--fc: var(--kling)">
+      <div class="div-name">Multi-Shot Storyboard</div>
+      <div class="div-winner"><span class="dot"></span><a href="kling-3.html">Kling 3.0</a></div>
+      <p>Up to 6 labeled shots in one native generation, each with its own framing, motion and duration. “Think in shots, not prompts.”</p>
+    </div>
+
+    <div class="div-card" style="--fc: var(--sd25)">
+      <div class="div-name">Editing a Finished Clip</div>
+      <div class="div-winner"><span class="dot"></span><a href="seedance-25.html">Seedance 2.5</a></div>
+      <p>Timestamp-scoped replacement, background swap, relight, audio-only edits — even changing a speaker's language while keeping content and timing.</p>
+    </div>
+
+    <div class="div-card" style="--fc: var(--sd25)">
+      <div class="div-name">Multi-Language Dialogue</div>
+      <div class="div-winner"><span class="dot"></span><a href="seedance-25.html">Seedance 2.5</a></div>
+      <p>Native audio in 10+ languages with mid-clip language switching and regional-accent pinning. Kling's P1–P4 dialogue discipline is a close second.</p>
+    </div>
+
+    <div class="div-card" style="--fc: var(--omni)">
+      <div class="div-name">Fluid Physics</div>
+      <div class="div-winner"><span class="dot"></span><a href="omni-flash.html">Gemini Omni Flash</a></div>
+      <p>Milk-crown splash, Worthington rebound jet, marbled swirl — textbook pass in our test sweep. Kling 3.0 is the co-favorite for physical realism.</p>
+    </div>
+
+    <div class="div-card" style="--fc: var(--sd25)">
+      <div class="div-name">Previz → Final</div>
+      <div class="div-winner"><span class="dot"></span><a href="seedance-25.html">Seedance 2.5</a></div>
+      <p>Renders grey blockouts into finished footage — the only fighter built for a previz pipeline with coarse/fine blockout modes.</p>
+    </div>
+
+  </div>
+</div></section>
+
+<!-- ═══ SPEC SHEET ═══ -->
+<section id="specs"><div class="wrap">
+  <div class="sec-head"><span class="num">03</span><h2 class="sec-title">The Spec Sheet</h2></div>
+  <p class="sec-lede">Hard numbers from the official docs, cross-checked against our own ffprobe reads. Where marketing and metadata disagree, we say so.</p>
+  <div style="overflow-x:auto" class="mt-m">
+  <table class="spec-table">
+    <thead><tr>
+      <th></th>
+      <th><a href="seedance-25.html" style="color:var(--sd25)">Seedance 2.5</a></th>
+      <th><a href="seedance-20.html" style="color:var(--sd20)">Seedance 2.0</a></th>
+      <th><a href="kling-3.html" style="color:var(--kling)">Kling 3.0</a></th>
+      <th><a href="omni-flash.html" style="color:#a99dff">Gemini Omni Flash</a></th>
+    </tr></thead>
+    <tbody>
+      <tr><td>Provider / released</td><td>ByteDance · Jul 31, 2026</td><td>ByteDance · Q4 2025</td><td>Kuaishou · Feb 4, 2026</td><td>Google DeepMind · May 2026 (EAP)</td></tr>
+      <tr><td>Max duration</td><td class="win">30s single pass + extension (fwd/bwd)</td><td>15s (+ forward extension)</td><td>15s, up to 6 storyboard shots</td><td>3–10s, 1s steps</td></tr>
+      <tr><td>Max resolution</td><td>480p / 720p only ⚠</td><td class="win">4K (10-bit HEVC)</td><td class="win">Native 4K @ 60fps</td><td>720p (Veo upscale → 1080p/4K)</td></tr>
+      <tr><td>Frame rate</td><td>24fps fixed — <i>metadata lies, reports 60</i></td><td>24fps (ignores 60 requests)</td><td class="win">Up to 60fps</td><td>24fps</td></tr>
+      <tr><td>Reference materials</td><td class="win">50 total — 30 img · 10 vid · 10 aud, with exclusions</td><td>9 img + 3 vid + 3 aud, all-in-one</td><td>Elements system (multi-image identity refs)</td><td>Images only — <code>&lt;FIRST_FRAME&gt;</code>, <code>&lt;IMAGE_REF_N&gt;</code></td></tr>
+      <tr><td>Native audio</td><td class="win">10+ languages, mid-clip switching</td><td>Beat-matched cuts, auto-dubbing</td><td>P1–P4 dialogue principles, multi-dialect</td><td>Always on by default (even unrequested)</td></tr>
+      <tr><td>Editing existing video</td><td class="win">Timestamp-scoped, bg swap, relight, language change</td><td>Base-clip extension / effect repro</td><td>Re-prompt (no in-place edit)</td><td class="win">Conversational delta edits, persistent clip</td></tr>
+      <tr><td>Extension / interpolation</td><td class="win">Forward + backward + seamless bridges</td><td>Forward only</td><td>—</td><td>Not supported (seed next gen from last frame)</td></tr>
+      <tr><td>Aspect ratios</td><td>21:9 · 16:9 · 4:3 · 1:1 · 3:4 · 9:16 + Smart</td><td>Multiple (Smart on i2v)</td><td>Multiple</td><td>16:9 or 9:16 (real API field)</td></tr>
+      <tr><td>On-screen text</td><td>Often reliable now (wordmark @ 4 scales)</td><td>Gibberish pack copy observed</td><td>Unreliable — composite in post</td><td class="win">Reliable when short; dense multi-line garbles</td></tr>
+      <tr><td>Cost</td><td>~$0.23/s @720p (≈1.5× 2.0), single SKU</td><td>$0.15/s base · $0.08/s Mini</td><td>Per fal.ai rate card</td><td>EAP: 3 QPM, no batch</td></tr>
+      <tr><td>Watermark</td><td>—</td><td>—</td><td>—</td><td>SynthID on every output</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <p class="small mt-s">⚠ The “4K &amp; 30s” headline on Seedance 2.5's product pages contradicts its own parameter table (480p/720p only). We treat 720p as the ceiling until ByteDance says otherwise — see the dossier.</p>
+</div></section>
+
+<!-- ═══ HEAD-TO-HEAD ═══ -->
+<section id="h2h"><div class="wrap">
+  <div class="sec-head"><span class="num">04</span><h2 class="sec-title">Head-to-Head Matrix</h2></div>
+  <p class="sec-lede">Pick the scenario, take the winner. This is what we'd tell a client today.</p>
+  <div class="matrix mt-m">
+    <div class="m-cell m-head"></div>
+    <div class="m-cell m-head" style="color:var(--sd25)">SD 2.5</div>
+    <div class="m-cell m-head" style="color:var(--sd20)">SD 2.0</div>
+    <div class="m-cell m-head" style="color:var(--kling)">Kling 3</div>
+    <div class="m-cell m-head" style="color:#a99dff">Omni</div>
+
+    <div class="m-cell m-rowhead">5+ named characters, one frame</div>
+    <div class="m-cell"><div class="m-label">Winner</div><div class="m-pick" style="color:var(--sd25)">Seedance 2.5</div></div>
+    <div class="m-cell"><div class="m-label">Runner-up</div><div class="m-pick">Seedance 2.0 (9 refs)</div></div>
+    <div class="m-cell"><div class="m-label">Also viable</div><div class="m-pick">Kling Elements</div></div>
+    <div class="m-cell"><div class="m-label">Use for</div><div class="m-pick">2–3 refs max, then edit</div></div>
+
+    <div class="m-cell m-rowhead">Client wants 4K master</div>
+    <div class="m-cell"><div class="m-label">Disqualified</div><div class="m-pick" style="color:#e5484d">720p ceiling</div></div>
+    <div class="m-cell"><div class="m-label">Co-winner</div><div class="m-pick" style="color:var(--sd20)">Seedance 2.0</div></div>
+    <div class="m-cell"><div class="m-label">Winner</div><div class="m-pick" style="color:var(--kling)">Kling 3.0 native</div></div>
+    <div class="m-cell"><div class="m-label">Disqualified</div><div class="m-pick" style="color:#e5484d">720p + Veo upscale</div></div>
+
+    <div class="m-cell m-rowhead">One 30s story, no stitching</div>
+    <div class="m-cell"><div class="m-label">Winner</div><div class="m-pick" style="color:var(--sd25)">Seedance 2.5</div></div>
+    <div class="m-cell"><div class="m-label">Two 15s halves</div><div class="m-pick">Seedance 2.0</div></div>
+    <div class="m-cell"><div class="m-label">6 shots × ≤3s each</div><div class="m-pick">Kling storyboard</div></div>
+    <div class="m-cell"><div class="m-label">Chain of 10s gens</div><div class="m-pick">Omni (last-frame seed)</div></div>
+
+    <div class="m-cell m-rowhead">Cuts must hit the beat</div>
+    <div class="m-cell"><div class="m-label">Strong</div><div class="m-pick" style="color:var(--sd25)">Timestamped beats</div></div>
+    <div class="m-cell"><div class="m-label">Winner</div><div class="m-pick" style="color:var(--sd20)">Auto beat-matched</div></div>
+    <div class="m-cell"><div class="m-label">Manual timing</div><div class="m-pick">Shot durations</div></div>
+    <div class="m-cell"><div class="m-label">Audio-driven morphs</div><div class="m-pick">Speech-synced scenes</div></div>
+
+    <div class="m-cell m-rowhead">“Fix it” after generation</div>
+    <div class="m-cell"><div class="m-label">Scoped edits</div><div class="m-pick" style="color:var(--sd25)">Timestamp region + ref</div></div>
+    <div class="m-cell"><div class="m-label">Effect repro only</div><div class="m-pick">Style-clip route</div></div>
+    <div class="m-cell"><div class="m-label">Re-roll the scene</div><div class="m-pick">Full re-prompt</div></div>
+    <div class="m-cell"><div class="m-label">Winner</div><div class="m-pick" style="color:#a99dff">Conversational delta</div></div>
+
+    <div class="m-cell m-rowhead">Logo / caption in the shot</div>
+    <div class="m-cell"><div class="m-label">Improved</div><div class="m-pick" style="color:var(--sd25)">Verify every render</div></div>
+    <div class="m-cell"><div class="m-label">Avoid</div><div class="m-pick" style="color:#e5484d">Gibberish observed</div></div>
+    <div class="m-cell"><div class="m-label">Composite in post</div><div class="m-pick">Ideogram / GPT Image</div></div>
+    <div class="m-cell"><div class="m-label">Winner (short text)</div><div class="m-pick" style="color:#a99dff">Omni, terse captions</div></div>
+
+    <div class="m-cell m-rowhead">Volume / cost at scale</div>
+    <div class="m-cell"><div class="m-label">Priced out</div><div class="m-pick" style="color:#e5484d">$0.23/s, no cheap tier</div></div>
+    <div class="m-cell"><div class="m-label">Winner</div><div class="m-pick" style="color:var(--sd20)">Mini at $0.08/s</div></div>
+    <div class="m-cell"><div class="m-label">Mid-range</div><div class="m-pick">fal rate card</div></div>
+    <div class="m-cell"><div class="m-label">Not for volume</div><div class="m-pick">3 QPM, no batch</div></div>
+  </div>
+</div></section>
+
+<!-- ═══ COMMUNITY CORNER ═══ -->
+<section id="community"><div class="wrap">
+  <div class="sec-head"><span class="num">05</span><h2 class="sec-title">The Crowd Says… vs. What We Saw</h2></div>
+  <p class="sec-lede">We pulled creator threads from Reddit (r/Seedance_AI, r/KlingAI_Videos, r/OmniGemini and friends) in Aug 2026.
+  The internet is loud about access and hype — our production data is quiet but verifiable. Here's the gap.</p>
+
+  <div class="quotes mt-m">
+    <div class="quote" style="--fc: var(--sd25)">
+      <p>I tried a 25-second K-pop-style girl group MV with five characters and compared Wan 3.0, Seedance 2.5 and MiniMax H3. Five people in the same frame is still a pretty brutal test.</p>
+      <footer>Reddit · multi-character consistency A/B</footer>
+    </div>
+    <div class="quote" style="--fc: var(--sd25)">
+      <p>I've been testing how far Seedance 2.5 can be pushed beyond isolated 5–10 second clips — a little over 3 minutes of one continuous story with recurring characters, dialogue and crowd interaction.</p>
+      <footer>Reddit · long-form push test</footer>
+    </div>
+    <div class="quote" style="--fc: var(--sd25)">
+      <p>I bought credits thinking I could just spend them on Seedance. Turns out I have to buy a membership, and support won't refund the credits. It's not mentioned anywhere.</p>
+      <footer>Reddit · access friction</footer>
+    </div>
+    <div class="quote" style="--fc: var(--sd20)">
+      <p>The quality of Seedance 2.0 is amazing, but I doubt you have control as fine as you can have with Google Omni. You were pretty much at the mercy of what the model was inclined to create.</p>
+      <footer>Reddit · control comparison</footer>
+    </div>
+    <div class="quote" style="--fc: var(--sd20)">
+      <p>I'm trying to generate crows flying through a hallway — their movements often look unnatural, almost like they're flying in slow motion. Has anyone else hit this?</p>
+      <footer>Reddit · flocks &amp; fast small motion</footer>
+    </div>
+    <div class="quote" style="--fc: var(--kling)">
+      <p>For all of its faults, Kling 3.0 is still the king of realistic performances.</p>
+      <footer>Reddit · thread title, r/KlingAI_Videos</footer>
+    </div>
+    <div class="quote" style="--fc: var(--kling)">
+      <p>What actually makes a Kling video feel real vs staged? (Kling 3.0 prompts included.)</p>
+      <footer>Reddit · the realism question</footer>
+    </div>
+    <div class="quote" style="--fc: var(--omni)">
+      <p>The internet was making fun of Omni being really bad, but it seems its strength is in editing/modifying existing media. After using it for video-to-video generation, this is feeling amazing tbh.</p>
+      <footer>Reddit · r/OmniGemini</footer>
+    </div>
+    <div class="quote" style="--fc: var(--omni)">
+      <p>If you are trying directly in Gemini it doesn't work as well — use Flow. I generate 4 options at a time and usually get some good ones.</p>
+      <footer>Reddit · workflow tip</footer>
+    </div>
+    <div class="quote" style="--fc: var(--omni)">
+      <p>It still feels like Veo 3 under the hood.</p>
+      <footer>Reddit · first impressions</footer>
+    </div>
+  </div>
+
+  <div class="pov-note">
+    <b>Our POV (from 120 paired A/B tests + ffprobe-verified specs):</b> the crowd sees “2.5 is so good” — we see a
+    two-model pipeline (2.5 for duration and editing, 2.0 for 4K finish). The crowd says Omni “feels like Veo 3” — our sweep found
+    the conversational delta editing is genuinely new ground, with audio attached to every clip by default. The crowd debates Kling's
+    realism — we've codified exactly why it wins (re-anchor identity per shot, specify lighting in four dimensions, explicit motion verbs).
+    And nobody online has documented that Seedance 2.5's file metadata reports 60fps when the real rate is 24 — that one will save you a client meeting.
+  </div>
+</div></section>
+
+<footer class="site"><div class="wrap">
+  <span>Battle of the Models · QuickFrame AI internal reference · Aug 2026</span>
+  <span>Sources: <a href="index.html#specs">KG director ai vault (model dossiers + field notes)</a> · BytePlus Research &amp; Google Omni Research (RODECASTER) · Reddit creator threads</span>
+</div></footer>
+
+</body>
+</html>

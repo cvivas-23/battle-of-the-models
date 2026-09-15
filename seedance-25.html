@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Seedance 2.5 — “The Tornado” · Battle of the Models</title>
+<link rel="stylesheet" href="styles.css">
+<script src="emblems.js"></script>
+<style>:root { --fc: var(--sd25); } body { --fh-glow: rgba(0,229,195,.16); }</style>
+</head>
+<body>
+
+<nav class="topbar"><div class="wrap">
+  <a class="brand" href="index.html">BATTLE OF THE <em>MODELS</em></a>
+  <div class="topnav">
+    <a class="f-sd25" href="seedance-25.html">Seedance 2.5</a>
+    <a class="f-sd20" href="seedance-20.html">Seedance 2.0</a>
+    <a class="f-kling" href="kling-3.html">Kling 3.0</a>
+    <a class="f-omni" href="omni-flash.html">Gemini Omni Flash</a>
+  </div>
+</div></nav>
+
+<header class="fighter-hero"><div class="wrap">
+  <span class="emblem-big" data-emblem="sd25"></span>
+  <div class="fighter-id">
+    <div class="alias">ByteDance · Dreamina / ModelArk · Released Jul 31, 2026</div>
+    <h1>Seedance 2.5</h1>
+    <div class="nick">“The Tornado” — quad-modal heavyweight</div>
+    <div class="record-row">
+      <div class="record-chip"><div class="rc-v" style="color:var(--fc)">30s</div><div class="rc-k">Single pass</div></div>
+      <div class="record-chip"><div class="rc-v" style="color:var(--fc)">50</div><div class="rc-k">References</div></div>
+      <div class="record-chip"><div class="rc-v" style="color:var(--fc)">720p</div><div class="rc-k">Ceiling ⚠</div></div>
+      <div class="record-chip"><div class="rc-v" style="color:var(--fc)">24fps</div><div class="rc-k">Fixed</div></div>
+      <div class="record-chip"><div class="rc-v" style="color:var(--fc)">$0.23/s</div><div class="rc-k">@720p</div></div>
+    </div>
+  </div>
+</div></header>
+
+<!-- ═══ FIGHTING STYLE ═══ -->
+<section><div class="wrap">
+  <div class="sec-head"><span class="num">F1</span><h2 class="sec-title">Fighting Style</h2></div>
+  <p class="sec-lede">The only model on the card that takes <b>text + image + video + audio in one call</b> and then keeps working after the bell — editing, extending, bridging. It's not a straight upgrade from 2.0; it's a different fighter for a different job.</p>
+  <div class="statbars mt-m">
+    <div class="statbar"><div class="sb-top"><span class="sb-k">Reference load</span><span class="sb-v">50 refs</span></div><div class="sb-track"><div class="sb-fill" style="width:100%"></div></div></div>
+    <div class="statbar"><div class="sb-top"><span class="sb-k">Narrative length</span><span class="sb-v">30s + extension</span></div><div class="sb-track"><div class="sb-fill" style="width:100%"></div></div></div>
+    <div class="statbar"><div class="sb-top"><span class="sb-k">In-place editing</span><span class="sb-v">Timestamp-scoped</span></div><div class="sb-track"><div class="sb-fill" style="width:95%"></div></div></div>
+    <div class="statbar"><div class="sb-top"><span class="sb-k">Delivery resolution</span><span class="sb-v">720p max</span></div><div class="sb-track"><div class="sb-fill" style="width:35%"></div></div></div>
+    <div class="statbar"><div class="sb-top"><span class="sb-k">Cost efficiency</span><span class="sb-v">~1.5× 2.0</span></div><div class="sb-track"><div class="sb-fill" style="width:45%"></div></div></div>
+    <div class="statbar"><div class="sb-top"><span class="sb-k">Style adherence</span><span class="sb-v">Weakest layer</span></div><div class="sb-track"><div class="sb-fill" style="width:40%"></div></div></div>
+  </div>
+
+  <div class="duo mt-m">
+    <div class="card" style="--fc: var(--fc)">
+      <h3><span class="ico">✚</span>Fighting for you</h3>
+      <ul>
+        <li><b>50 reference materials</b> with per-material role <i>and exclusion</i> control — nothing else takes this many.</li>
+        <li><b>30-second narrative in one generation</b> via stages + declared end states — no stitching 15s halves.</li>
+        <li><b>Real editing:</b> scoped subject replacement, background swap, relight, audio-only edits, language change with timing preserved.</li>
+        <li><b>Forward and backward extension</b> plus generated seamless transitions between clips.</li>
+        <li><b>Native audio in 10+ languages</b> with mid-clip switching and regional-accent pinning.</li>
+        <li><b>Previz → final:</b> renders grey blockouts into finished footage (coarse/fine blockout modes).</li>
+      </ul>
+    </div>
+    <div class="card" style="--fc: #e5484d">
+      <h3><span class="ico">✖</span>Fighting against you</h3>
+      <ul>
+        <li><b>720p ceiling</b> — a regression from 2.0 (4K) and the one hard blocker for broadcast/CTV.</li>
+        <li><b>~1.5× the cost of 2.0</b> with no Fast/Mini tier — high-volume work gets priced out.</li>
+        <li><b>No seed control in the UI</b> — budget more than one roll per test.</li>
+        <li><b>Style adherence is materially weaker</b> than structural adherence (a 90s-sitcom brief nailed the structure, ignored the era look).</li>
+        <li><b>Timestamps are time budgets, not frame-accurate edit points.</b></li>
+        <li><b>Marketing says “4K &amp; 30s”; the parameter table says 480p/720p only.</b> We believe the table.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="verdict mt-m" style="--fc: var(--fc)">
+    <div class="v-label">Corner verdict</div>
+    Pick it for <b>multi-character spots, 30s one-pass narratives, and editing a finished clip</b>. Do not pick it for final delivery above 720p — run the two-model pipeline: <b>2.5 for duration and editing, <a href="seedance-20.html" style="color:var(--sd20)">Seedance 2.0</a> for the 1080p/4K finish.</b> Any plan that ignores the resolution regression is wrong.
+  </div>
+</div></section>
+
+<!-- ═══ PROMPTING FRAMEWORK ═══ -->
+<section><div class="wrap">
+  <div class="sec-head"><span class="num">F2</span><h2 class="sec-title">The Prompting Game Plan</h2></div>
+  <p class="sec-lede">Distilled from the official ModelArk guide (Aug 7, 2026) + our prompting framework + 12 production generations. This is how you get the best out of it.</p>
+
+  <div class="card mt-m framework" style="--fc: var(--fc)">
+    <div class="step"><div class="step-num">1</div><div>
+      <h4>The core formula — then stop</h4>
+      <p>Everything after Action is optional. <b>Never put generation parameters in the prompt</b> — resolution, ratio and duration are set on the page/API.</p>
+      <pre class="prompt"><span class="hl">Subject + Action/Event + Scene &amp; Environment + Visual Style + Camera/Cut + Audio</span>
+
+&lt;Subject&gt; performs &lt;primary action or event&gt; in &lt;scene and environment&gt;.
+The visuals feature &lt;visual style&gt;.
+Use &lt;shot size, camera angle, camera movement, or cuts&gt;.
+Audio includes &lt;dialogue, ambience, sound effects, or music&gt;.</pre>
+    </div></div>
+
+    <div class="step"><div class="step-num">2</div><div>
+      <h4>References: state what to use AND what NOT to use</h4>
+      <p>The single most important rule. Bind every subject individually — “@Images 1 through 4 define four characters respectively” is meaningless to the model.</p>
+      <pre class="prompt">@Image 1 defines the ceramic artist's facial features, hairstyle, and dark green apron.
+         <span class="hl">Do not use the image background.</span>
+@Image 2 defines the workbench, window placement, and morning light.
+         <span class="hl">Do not use the people in the image.</span>
+@Video 1 defines the pacing of throwing clay, lifting the cup, placing it down.
+         <span class="hl">Do not use the person's identity, clothing, or scene from the video.</span></pre>
+      <p>Recommended load: <b>1–8 distinct subjects</b> across subject images · 1–5 distinct subjects in video refs (5–10s each) · only task-relevant audio. Stretch ranges (9–12) exist but stability drops. Over five subjects needing multiple views → separate images per view, never a collage.</p>
+    </div></div>
+
+    <div class="step"><div class="step-num">3</div><div>
+      <h4>30s narratives: stages first, timestamps for precision</h4>
+      <p>Each stage gets <b>one primary state change</b> and a declared <b>end state</b> — what is directly visible when the stage finishes. That's the continuity mechanism.</p>
+      <pre class="prompt">[Generation Goal]
+Generate a &lt;video type&gt;. Central subject &lt;subject&gt;, primary event &lt;story summary&gt;.
+
+[Stage 1]
+Initial state: &lt;characters, props, scene&gt;.
+Primary event: &lt;one primary action&gt;.
+<span class="hl">End state: &lt;positions, prop ownership, visible scene state&gt;.</span>
+
+[Stage 2]
+Continue from the previous stage: &lt;what must remain unchanged&gt;.
+Primary event: &lt;one primary action&gt;.
+End state: &lt;observable state&gt;.
+
+[Maintain Consistency]
+Keep &lt;identity, character count, clothing, prop ownership, spatial direction, audio&gt; consistent.</pre>
+      <p>Use timestamps only for critical control — a handoff, an entrance/exit, a transition. Ranges must be consecutive and non-overlapping; they're time budgets, not edit points.</p>
+    </div></div>
+
+    <div class="step"><div class="step-num">4</div><div>
+      <h4>Editing: source is the sole master, then scope the change</h4>
+      <pre class="prompt">[Edit Goal]        Edit @Video 1. Within &lt;whole video | time range&gt;, &lt;add|remove|replace|adjust&gt; &lt;target&gt;.
+[Source Video Role] @Video 1 is the sole editing master. It defines &lt;characters, scene, actions,
+                    composition, camera movement, occlusion, audio, event order&gt;.
+[Edit Scope]       Modify only &lt;object, region, time range, or audio category&gt;.
+<span class="hl">[Content to Preserve] Keep &lt;what must not change&gt; from @Video 1.</span></pre>
+      <p>Subject replacement adds a <b>Timeline Inheritance</b> clause: the target inherits every appearance, motion, occlusion and exit of the original. Audio editing is granular — dialogue, language, voice, BGM and SFX are separately editable.</p>
+    </div></div>
+
+    <div class="step"><div class="step-num">5</div><div>
+      <h4>The special syntax (memorize it)</h4>
+      <pre class="prompt">Music       →  <span class="hl">( Soft, rhythmic piano plays in the background )</span>
+Sound FX    →  <span class="hl">&lt;A bell rings in the distance&gt;</span>
+Dialogue    →  <span class="hl">{Hello, welcome back.}</span>
+Subtitles   →  <span class="hl">【Chapter One: Departure】</span>
+
+<span class="cm">// Dialogue language reinforcement — pins accent + delivery:</span>
+Dialogue language: authentic Los Angeles English. The young man says in natural
+Los Angeles vernacular: {No way, you actually made it.}</pre>
+    </div></div>
+
+    <div class="step"><div class="step-num">6</div><div>
+      <h4>Cinematography + emotion, the 2.5 way</h4>
+      <p>Standard terms work directly (push in, orbit, dolly out, low angle…). Popular techniques need one extra clause: <b>which subject</b>, where the move starts and ends. Uncommon terms: keep the term AND translate it into observable change (“Rack focus: shift focus smoothly from the leaves in the foreground to the person behind…”). Emotion words set direction; <b>2–4 observable cues</b> control the performance — eyes, brows, mouth, breathing, hands.</p>
+    </div></div>
+  </div>
+
+  <div class="card mt-m" style="--fc: var(--fc)">
+    <h3><span class="ico">⚑</span>Anti-patterns (learned the expensive way)</h3>
+    <ul>
+      <li><b>Grouped reference bindings</b> — “images 1–4 define four characters respectively.” Bind individually, always.</li>
+      <li><b>Demanding frequency</b> — “three actions in one second” breaks the timeline. One primary event per stage.</li>
+      <li><b>Restating motion a reference video already carries</b> — state only which attributes to inherit; restating conflicts with the ref.</li>
+      <li><b>Two ideas in one beat</b> — an orbit-plus-time-reverse in 5s delivered only the orbit. One idea per beat.</li>
+      <li><b>Promising reserved safe zones</b> — “keep the upper third clean” held in a wide and failed in a tight shot, same week. Never promise what you haven't seen.</li>
+      <li><b>Trusting style adjectives</b> — specify what <i>happens</i>; treat the look as a request, not a command.</li>
+    </ul>
+  </div>
+</div></section>
+
+<!-- ═══ FIELD NOTES ═══ -->
+<section><div class="wrap">
+  <div class="sec-head"><span class="num">F3</span><h2 class="sec-title">Field Notes — What the Docs Don't Say</h2></div>
+  <p class="sec-lede">From our production generations, Jul 31 – Aug 7, 2026 (BytePlus Research). The official guide doesn't tell you any of this.</p>
+  <div class="duo mt-m">
+    <div class="card" style="--fc: var(--fc)">
+      <h3><span class="ico">⚠</span>Gotchas that will save you</h3>
+      <ul>
+        <li><b>File metadata lies about frame rate.</b> <code>r_frame_rate</code> reports 60; the real rate is 24. Check <code>avg_frame_rate</code> + frame count — anyone spot-checking will misread it.</li>
+        <li><b>Extension re-encodes 24 → 30fps</b> and returns source + extension as one clip. Don't extend anything already signed off; budget a conform pass.</li>
+        <li><b>Unrequested brand marks appear.</b> A logo supplied for an end card turned up on wardrobe and a coffee mug.</li>
+        <li><b>Duration isn't promise-able yet.</b> One 15-second ask returned 5.06s.</li>
+      </ul>
+    </div>
+    <div class="card" style="--fc: var(--fc)">
+      <h3><span class="ico">★</span>Where it quietly got good</h3>
+      <ul>
+        <li><b>On-screen type is now often reliable.</b> A brand wordmark rendered correctly at four different scales in one spot; a product label survived a full push-in. Verify, but stop pre-rendering by default.</li>
+        <li><b>A written timeline is honoured as a timeline</b> — stage beats land where you put them (within the time-budget tolerance).</li>
+        <li><b>Reference casting holds across an extension join</b> — identity survives the boundary frame.</li>
+      </ul>
+    </div>
+  </div>
+</div></section>
+
+<!-- ═══ COMMUNITY ═══ -->
+<section><div class="wrap">
+  <div class="sec-head"><span class="num">F4</span><h2 class="sec-title">The Crowd Says…</h2></div>
+  <div class="quotes mt-m">
+    <div class="quote" style="--fc: var(--fc)">
+      <p>I tried a 25-second K-pop-style girl group MV with five characters and compared Wan 3.0, Seedance 2.5 and MiniMax H3. The main test was multi-character consistency — five people in the same frame is still pretty brutal.</p>
+      <footer>Reddit · r/Seedance_AI</footer>
+    </div>
+    <div class="quote" style="--fc: var(--fc)">
+      <p>I've been testing how far Seedance 2.5 can be pushed beyond isolated 5–10 second clips. This is a little over 3 minutes of one continuous story with recurring characters, dialogue, different environments, crowd interaction and a lot of camera movement.</p>
+      <footer>Reddit · long-form push test</footer>
+    </div>
+    <div class="quote" style="--fc: var(--fc)">
+      <p>Seedance 2.5 is really good at making extremely realistic videos that you can literally not tell (from real).</p>
+      <footer>Reddit · thread title</footer>
+    </div>
+    <div class="quote" style="--fc: var(--fc)">
+      <p>I bought credits thinking I could just spend them on Seedance. Turns out I have to buy a membership, and support won't refund my credits — it's not mentioned anywhere.</p>
+      <footer>Reddit · access friction</footer>
+    </div>
+  </div>
+  <div class="pov-note">
+    <b>Our POV:</b> the crowd is right that realism jumped, and their long-form push tests are exactly what our extension + blockout workflow automates. What the crowd hasn't published: the 720p ceiling math ($0.23/s at 1.5× with no cheap tier), the fps metadata lie, or the two-model finish pipeline. That's the gap between “wow video” and a production plan.
+  </div>
+</div></section>
+
+<footer class="site"><div class="wrap">
+  <span><a href="index.html">← Back to the octagon</a></span>
+  <span>Sources: KG director ai vault · Seedance 2.5 dossier + field notes · BytePlus Research (RODECASTER) · Reddit creator threads, Aug 2026</span>
+</div></footer>
+
+</body>
+</html>

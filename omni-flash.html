@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gemini Omni Flash — “The Director” · Battle of the Models</title>
+<link rel="stylesheet" href="styles.css">
+<script src="emblems.js"></script>
+<style>:root { --fc: var(--omni); } body { --fh-glow: rgba(124,108,255,.18); }</style>
+</head>
+<body>
+
+<nav class="topbar"><div class="wrap">
+  <a class="brand" href="index.html">BATTLE OF THE <em>MODELS</em></a>
+  <div class="topnav">
+    <a class="f-sd25" href="seedance-25.html">Seedance 2.5</a>
+    <a class="f-sd20" href="seedance-20.html">Seedance 2.0</a>
+    <a class="f-kling" href="kling-3.html">Kling 3.0</a>
+    <a class="f-omni" href="omni-flash.html">Gemini Omni Flash</a>
+  </div>
+</div></nav>
+
+<header class="fighter-hero"><div class="wrap">
+  <span class="emblem-big" data-emblem="omni"></span>
+  <div class="fighter-id">
+    <div class="alias">Google DeepMind · Interactions API v1beta1 (EAP) · May 2026</div>
+    <h1>Gemini Omni Flash</h1>
+    <div class="nick">“The Director” — the only fighter you keep directing after the bell</div>
+    <div class="record-row">
+      <div class="record-chip"><div class="rc-v" style="color:var(--fc)">3–10s</div><div class="rc-k">1s steps</div></div>
+      <div class="record-chip"><div class="rc-v" style="color:var(--fc)">720p</div><div class="rc-k">+ Veo upscale</div></div>
+      <div class="record-chip"><div class="rc-v" style="color:var(--fc)">∞ turns</div><div class="rc-k">Persistent clip</div></div>
+      <div class="record-chip"><div class="rc-v" style="color:var(--fc)">3 QPM</div><div class="rc-k">No batch</div></div>
+      <div class="record-chip"><div class="rc-v" style="color:var(--fc)">SynthID</div><div class="rc-k">Every output</div></div>
+    </div>
+  </div>
+</div></header>
+
+<!-- ═══ FIGHTING STYLE ═══ -->
+<section><div class="wrap">
+  <div class="sec-head"><span class="num">F1</span><h2 class="sec-title">Fighting Style</h2></div>
+  <p class="sec-lede">The other three render what you describe. Omni <b>directs what you intend</b> — it reasons with world knowledge, fills in the detail you leave out, and then lets you refine the <i>same</i> clip turn by turn in plain language. Model id <code>gemini-omni-flash-preview</code>. The single biggest adaptation on this card: <b>under-specify to let it improvise; over-specify to lock art direction.</b></p>
+  <div class="statbars mt-m">
+    <div class="statbar"><div class="sb-top"><span class="sb-k">Conversational control</span><span class="sb-v">Delta edits, persistent</span></div><div class="sb-track"><div class="sb-fill" style="width:100%"></div></div></div>
+    <div class="statbar"><div class="sb-top"><span class="sb-k">On-screen text</span><span class="sb-v">Reliable when short</span></div><div class="sb-track"><div class="sb-fill" style="width:85%"></div></div></div>
+    <div class="statbar"><div class="sb-top"><span class="sb-k">Camera grammar</span><span class="sb-v">Oners, dolly zooms</span></div><div class="sb-track"><div class="sb-fill" style="width:90%"></div></div></div>
+    <div class="statbar"><div class="sb-top"><span class="sb-k">Fluid physics</span><span class="sb-v">Textbook pass</span></div><div class="sb-track"><div class="sb-fill" style="width:92%"></div></div></div>
+    <div class="statbar"><div class="sb-top"><span class="sb-k">Delivery resolution</span><span class="sb-v">720p + Veo upscale</span></div><div class="sb-track"><div class="sb-fill" style="width:40%"></div></div></div>
+    <div class="statbar"><div class="sb-top"><span class="sb-k">Narrative length</span><span class="sb-v">10s, no extension</span></div><div class="sb-track"><div class="sb-fill" style="width:30%"></div></div></div>
+  </div>
+
+  <div class="duo mt-m">
+    <div class="card" style="--fc: var(--fc)">
+      <h3><span class="ico">✚</span>Fighting for you</h3>
+      <ul>
+        <li><b>Conversational delta editing</b> — “change the butterfly to a bee” on the same clip, turn by turn. Edits accumulate, they don't reset; restyles preserve motion.</li>
+        <li><b>Intent-based prompting</b> — ~25 words of intent got model-directed coverage it invented on its own (a cinematic cut we never requested).</li>
+        <li><b>Legible on-screen text</b> — short titles/captions render reliably; the only fighter where you can prompt type directly.</li>
+        <li><b>Speech-synced scene morphing</b> — scene changes fire on exact spoken cue words while holding a speaker's identity from one photo ref.</li>
+        <li><b>Real cinematographic grammar</b> — a true continuous oner through a neon night market with dolly zoom and clean subject reveal, frame-exact at 8.0s.</li>
+        <li><b>Fluid physics</b> — milk-crown splash, Worthington rebound jet, marbled swirl: the hardest video-model task, nailed.</li>
+      </ul>
+    </div>
+    <div class="card" style="--fc: #e5484d">
+      <h3><span class="ico">✖</span>Fighting against you</h3>
+      <ul>
+        <li><b>720p ceiling, 10s max</b> — the finish route is a Veo upscale pass (4–8s clips → 1080p/4K).</li>
+        <li><b>No extension, no first→last interpolation, no voice editing.</b> Do the arc in one timecoded gen, or seed a new gen from the last frame via <code>&lt;FIRST_FRAME&gt;</code>.</li>
+        <li><b>Image refs only</b> — audio refs unsupported; video refs (≤3s) are accepted by the schema but not processed correctly.</li>
+        <li><b>Object-class replacement is shaky</b> — ships→stingrays mostly stayed ships. Lean on material/look changes; for a true swap, put the new object in the opening prompt.</li>
+        <li><b>Storyboard = narrative reference, not style</b> — an inked comic storyboard got re-rendered as polished semi-realistic paintings despite explicit “keep the inked look.”</li>
+        <li><b>3 QPM, no batch + SynthID on everything</b> — it's a directing model, not a volume model; note the watermark for client provenance.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="verdict mt-m" style="--fc: var(--fc)">
+    <div class="v-label">Corner verdict</div>
+    Pick it for <b>iterative art direction, in-scene edits, on-screen text, and speech-synced morphs.</b> The crowd was right to be skeptical of raw generation (“it still feels like Veo 3 under the hood”) — but our sweep confirms what they're circling: <b>the control granularity is genuinely new ground.</b> Plan it as the directing pass in a pipeline, with Kling or Seedance 2.0 handling final resolution.
+  </div>
+</div></section>
+
+<!-- ═══ PROMPTING FRAMEWORK ═══ -->
+<section><div class="wrap">
+  <div class="sec-head"><span class="num">F2</span><h2 class="sec-title">The Prompting Game Plan</h2></div>
+  <p class="sec-lede">From our Omni prompting framework (official DeepMind guide + public-preview docs + test sweep). Two modes: GENERATE, then DIRECT.</p>
+
+  <div class="card mt-m framework" style="--fc: var(--fc)">
+    <div class="step"><div class="step-num">1</div><div>
+      <h4>The one idea — intent over instruction</h4>
+      <p>Veo/Kling = render what I describe. Omni = direct what I intend. It has world knowledge, so state the goal and let it fill detail — then refine conversationally. Over-describing fights the model.</p>
+      <pre class="prompt"><span class="cm">// The GENERATE template</span>
+[N] second, [16:9 | 9:16] video. [Action in a Location.] [Shot framing + camera motion.]
+[Style/feel.] [Lighting source + quality.]
+
+<span class="cm">// Production-tested example</span>
+8 second, 16:9 video. A lone astronaut walks across an alien landscape with clear, azure
+water, leaving glowing footprints. Wide establishing shot that slowly pushes in to medium.
+Cinematic and majestic. Cool off-screen light, ethereal haze.</pre>
+      <p>Rules: <b>one evocative phrase per axis</b> beats a paragraph · duration is words, aspect ratio is a real API field (<code>response_format.aspect_ratio</code>) · no sampling knobs — the prompt is the only control surface (negatives go in prose: “Do not show X”).</p>
+    </div></div>
+
+    <div class="step"><div class="step-num">2</div><div>
+      <h4>Detail is a control dial, not a quality lever</h4>
+      <p>Validated in our test sweep: the minimal ~25-word prompt got model-directed coverage it invented; the over-specified one locked wardrobe + framing exactly and held one static shot. Both were excellent. <b>Under-specify to let it improvise coverage; over-specify to lock art direction.</b></p>
+    </div></div>
+
+    <div class="step"><div class="step-num">3</div><div>
+      <h4>DIRECT — the edit grammar (the killer feature)</h4>
+      <pre class="prompt"><span class="hl">Edit this keeping everything the same. [ONE change.]</span>
+
+Swap an object     →  "Change the butterfly to a bee."
+Restyle, keep motion →  "Change the ships to be made from white origami paper."
+Move the camera    →  "Change the camera angle, a close-up on his shoes, quickly tilting up
+                      to medium shot, then widening."
+Add an action      →  "The lights of the apartments start turning on in sync with the music."</pre>
+      <ul>
+        <li><b>One change per turn</b> — highest fidelity, isolates cause/effect, cheap to undo verbally (and quota-smart at 3 QPM).</li>
+        <li><b>“keeping everything the same”</b> locks the rest when the change should be surgical.</li>
+        <li><b>Chain transformations</b> — bee → swarm of fireflies → … each builds on the last; edits accumulate, they don't reset.</li>
+        <li><b>Don't re-describe what should stay</b> — reference it; that's how consistency holds.</li>
+      </ul>
+    </div></div>
+
+    <div class="step"><div class="step-num">4</div><div>
+      <h4>Reference patterns — image only, roles declared</h4>
+      <pre class="prompt"><span class="hl">&lt;FIRST_FRAME&gt;</span>  → that image is the literal opening frame: "&lt;FIRST_FRAME&gt; a woman is walking"
+<span class="hl">&lt;IMAGE_REF_0&gt;, &lt;IMAGE_REF_1&gt;…</span> → style/subject refs, 0-indexed, used inline
+
+<span class="cm">// Multi-image jobs — pin each image to a role:</span>
+[# Sources &lt;FIRST_FRAME&gt;@Image1] [# References &lt;IMAGE_REF_0&gt;@Image2]
+a woman &lt;IMAGE_REF_0&gt; is walking.
+Use Image1 as the starting frame. Use Image2 as a reference; do not use it as a literal initial frame.</pre>
+      <p><b>Storyboard → video:</b> attach a beat sheet and say “Follow the story exactly in order starting top left. Entire story in [N] seconds. Cinematic.” ⚠️ It reads the storyboard as beats to realize in its house style — supply the look separately.</p>
+    </div></div>
+
+    <div class="step"><div class="step-num">5</div><div>
+      <h4>The 30-second checklist</h4>
+      <ul>
+        <li><b>Mode?</b> New video → GENERATE. Refining → DIRECT.</li>
+        <li>Duration in words + aspect set as a field? <code>task</code> set if image-driven (<code>text_to_video | image_to_video | reference_to_video | edit</code>)?</li>
+        <li>Stated intent, not a frame-by-frame script? Picked only the elements that matter (Action always; +1–3 others)?</li>
+        <li>One evocative phrase per axis, no synonym chains?</li>
+        <li>Editing → one delta + “keeping everything the same”?</li>
+        <li>On-screen text? Specify placement + timing + rhythm — and keep it short.</li>
+        <li>Needs &gt;720p? Plan the Veo upscale pass (4–8s clips).</li>
+      </ul>
+    </div></div>
+
+    <div class="step"><div class="step-num">6</div><div>
+      <h4>Hard constraints — bake into every prompt</h4>
+      <pre class="prompt">Duration 3–10s (words) · Aspect 16:9|9:16 (field) · Resolution 720p, &gt;4MB → delivery:"uri"
+<span class="hl">NOT supported: video extension · first→last interpolation · voice editing · multi-video reasoning</span>
+Multi-turn needs store=true (store=false silently kills previous_interaction_id)
+Refs: image only · Quota: 3 QPM, no batch · Watermark: SynthID on all output
+Editing own uploaded video: Files API {"type":"document","uri"} — works except EEA/CH/UK</pre>
+    </div></div>
+  </div>
+
+  <div class="card mt-m" style="--fc: var(--fc)">
+    <h3><span class="ico">⚑</span>Field notes from our test sweep (T01–T06)</h3>
+    <ul>
+      <li><b>Native audio by default:</b> every clip ships an AAC track — including t2v prompts that never asked for sound. QC the track on every clip; you can prompt ambience even on “silent” shots.</li>
+      <li><b>Spec adherence is exact</b> when stated: 1280×720 · 16:9 · 5.0s · 24fps, frame-exact — duration and aspect honored from prose alone.</li>
+      <li><b>Dense on-screen text garbles</b> — a panel with title + multiple dialogue lines produced gibberish; the short “OVER THE CRAGS” rendered perfectly. Keep captions terse.</li>
+      <li><b>Color is the reliable character anchor</b> — cape color held across beats while headgear/armor freelanced (even flipped). Lock per-character details separately.</li>
+      <li><b>Lip-sync works on stylized characters</b> — a claymation robot delivered its line with good mouth animation; verify words offline with whisper.cpp before a human listen.</li>
+    </ul>
+  </div>
+</div></section>
+
+<!-- ═══ COMMUNITY ═══ -->
+<section><div class="wrap">
+  <div class="sec-head"><span class="num">F3</span><h2 class="sec-title">The Crowd Says…</h2></div>
+  <div class="quotes mt-m">
+    <div class="quote" style="--fc: var(--fc)">
+      <p>The internet was making fun of Omni being really bad, but it seems its strength is in editing/modifying existing media. After using it for video-to-video generation, this is feeling amazing tbh.</p>
+      <footer>Reddit · r/OmniGemini</footer>
+    </div>
+    <div class="quote" style="--fc: var(--fc)">
+      <p>The quality of Seedance 2.0 is amazing, but I doubt you have control as fine as you can have with Google Omni. You were pretty much at the mercy of what the model was inclined to create.</p>
+      <footer>Reddit · control comparison</footer>
+    </div>
+    <div class="quote" style="--fc: var(--fc)">
+      <p>Gemini omni is like nano banana — good at editing. Google's continued focus on multimodality will have surprising results.</p>
+      <footer>Reddit · the pattern recognition</footer>
+    </div>
+    <div class="quote" style="--fc: var(--fc)">
+      <p>If you are trying directly in Gemini it doesn't work as well — use Flow. I generate 4 options at a time and usually get some good ones.</p>
+      <footer>Reddit · workflow tip</footer>
+    </div>
+    <div class="quote" style="--fc: var(--fc)">
+      <p>If it is always so god damned busy? Every time I try to use it it says “We notice unusual activity.” Don't waste my trucking time Google.</p>
+      <footer>Reddit · EAP access friction</footer>
+    </div>
+  </div>
+  <div class="pov-note">
+    <b>Our POV:</b> the crowd's “it's like nano banana — good at editing” is the single best summary of this model, and our test sweep quantifies it: restyle-with-motion-preserved edits are high-confidence and stackable; object-class swaps are best-effort. What the crowd can't see yet (EAP-only): audio attached to every clip by default, exact spec adherence from prose, and speech-synced scene morphing on spoken cue words — that last one is the most QuickFrame-relevant capability we found in the whole sweep.
+  </div>
+</div></section>
+
+<footer class="site"><div class="wrap">
+  <span><a href="index.html">← Back to the octagon</a></span>
+  <span>Sources: KG director ai vault · Gemini Omni Flash dossier + prompting framework (Google Omni Research, RODECASTER) · Reddit creator threads, Aug 2026</span>
+</div></footer>
+
+</body>
+</html>
