@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Prompt Frameworks · Battle of the Models</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body class="playbook-page">
+
+<nav class="topbar"><div class="wrap">
+  <a class="brand" href="index.html">BATTLE OF THE <em>MODELS</em></a>
+  <div class="topnav">
+    <a class="f-playbook" href="prompting-frameworks.html" aria-current="page">Prompt Frameworks</a>
+    <a class="f-sd25" href="seedance-25.html">Seedance 2.5</a>
+    <a class="f-sd20" href="seedance-20.html">Seedance 2.0</a>
+    <a class="f-kling" href="kling-3.html">Kling 3.0</a>
+    <a class="f-omni" href="omni-flash.html">Google Omni 1.1</a>
+  </div>
+</div></nav>
+
+<header class="playbook-hero"><div class="wrap">
+  <p class="playbook-mark">QF AI PROMPT OPERATIONS MANUAL</p>
+  <h1>Prompting frameworks<br>that survive a bad brief</h1>
+  <p class="playbook-intro">A system-prompt structure for turning incomplete project inputs into consistent, production-ready video prompts. Four model adapters. Three generation cases. One repeatable workflow.</p>
+  <div class="case-strip" aria-label="Covered workflows">
+    <span><b>01</b> Standalone video</span>
+    <span><b>02</b> Multi-scene video</span>
+    <span><b>03</b> Reference-grounded video</span>
+  </div>
+  <nav class="model-jump" aria-label="Jump to a model">
+    <a href="#seedance-25" style="--fc:var(--sd25)">Seedance 2.5</a>
+    <a href="#seedance-20" style="--fc:var(--sd20)">Seedance 2.0</a>
+    <a href="#kling-3" style="--fc:var(--kling)">Kling 3.0</a>
+    <a href="#omni-11" style="--fc:var(--omni)">Google Omni 1.1</a>
+  </nav>
+</div></header>
+
+<main>
+<section id="compiler"><div class="wrap">
+  <div class="sec-head"><span class="num">00</span><h2 class="sec-title">The project-level prompt compiler</h2></div>
+  <p class="sec-lede">Use this as the system prompt behind a project workflow. It forces the workflow to validate inputs, map assets, apply the correct model adapter, and check its own work before returning a generation prompt.</p>
+
+  <div class="compiler-layout mt-m">
+    <article class="card compiler-card" style="--fc:var(--gold)">
+      <div class="prompt-toolbar"><h3>Shared system prompt</h3><button class="copy-prompt" data-copy-target="system-prompt">Copy system prompt</button></div>
+      <pre class="prompt" id="system-prompt">ROLE
+You are the QuickFrame AI Video Prompt Compiler. Convert a project brief into a model-ready prompt that can be used without additional prompt-writing skill.
+
+REQUIRED INPUTS
+- MODEL: Seedance 2.5 | Seedance 2.0 | Kling 3.0 | Google Omni 1.1
+- WORKFLOW: standalone | multi-scene | reference-grounded
+- DELIVERABLE: purpose, audience, platform, aspect ratio, duration
+- SUBJECT: identity, wardrobe/product features, required continuity
+- ACTION OR STORY: observable actions and required final state
+- WORLD: location, time, lighting, mood
+- CAMERA: framing, angle, movement, edit rhythm
+- AUDIO: dialogue, ambience, music, sound effects
+- ASSET REGISTRY: asset label, media type, exact job, what to preserve, what to ignore
+- HARD CONSTRAINTS: must include, must avoid, legal/brand requirements
+
+WORKFLOW
+1. Classify the request into one of the three workflows.
+2. Validate the inputs. If a missing fact changes the shot, identity, timing, or asset role, flag it as BLOCKED. Never invent it.
+3. Create an Asset Map. Give every asset exactly one primary job and an explicit exclusion when the model supports it.
+4. Apply the selected model adapter below. Do not blend syntax from other models.
+5. Write observable direction: actions, positions, expressions, camera behavior, sound, and visible end states. Replace abstract emotion with physical behavior.
+6. Remove contradictions, duplicate instructions, unsupported controls, and unbound asset names.
+7. Return the output in the exact schema below.
+
+OUTPUT SCHEMA
+A. INPUT CHECK — Ready | Blocked, followed only by material gaps or assumptions.
+B. ASSET MAP — Asset | Use for | Preserve | Ignore.
+C. READY-TO-PASTE PROMPT — one prompt using the selected model's native structure.
+D. GENERATION SETTINGS — duration, aspect ratio, resolution, and task/mode outside the prompt when the UI or API owns them.
+E. QC GATE — confirm subject count, identity anchors, action order, continuity, camera, audio, text, final state, and every asset reference.
+
+NON-NEGOTIABLES
+- Do not compensate for missing information with extra adjectives.
+- One dominant action per shot or stage.
+- One camera move per shot unless a motivated transition is explicitly requested.
+- Never group unrelated reference assets into a vague range.
+- Never claim a model will preserve a feature unless the prompt explicitly anchors it.
+- Return a production prompt, not an explanation of how to write one.</pre>
+    </article>
+
+    <aside class="gate-card">
+      <h3>The five gates</h3>
+      <ol>
+        <li><b>Intent:</b> What must the viewer understand or feel?</li>
+        <li><b>State:</b> What is visibly true at the start and end?</li>
+        <li><b>Coverage:</b> Which shots are actually required?</li>
+        <li><b>Assets:</b> What job does each reference perform?</li>
+        <li><b>QC:</b> What failure would make the output unusable?</li>
+      </ol>
+      <p>If a request cannot pass a gate, the workflow should ask for the missing production decision—not quietly invent one.</p>
+    </aside>
+  </div>
+</div></section>
+
+<section class="model-framework" id="seedance-25" style="--fc:var(--sd25)"><div class="wrap">
+  <header class="model-framework-head">
+    <div><span class="model-code">MODEL ADAPTER 01</span><h2>Seedance 2.5</h2></div>
+    <p><b>Operating principle:</b> direct one observable state change at a time. For longer stories, make the end state of one stage the starting state of the next.</p>
+  </header>
+  <div class="adapter-rules"><b>Compiler rules:</b> keep generation settings outside the prose prompt · bind every reference individually · state both what to use and what to ignore · use timestamps only for critical timing · declare visible end states.</div>
+
+  <div class="case-grid">
+    <article class="case-card">
+      <div class="case-label"><span>01</span><h3>Standalone video generation</h3></div>
+      <p>Best for one subject, one dominant action, and one visible ending.</p>
+      <div class="prompt-toolbar"><b>Direct one moment</b><button class="copy-prompt" data-copy-target="sd25-single">Copy</button></div>
+      <pre class="prompt" id="sd25-single">[SUBJECT]
+[Subject with defining identity, wardrobe, and prop details]
+
+[ACTION]
+Performs [one clear action]. The moment ends with [visible final state].
+
+[WORLD]
+In [setting], at [time], lit by [source + quality], with [mood].
+
+[CAMERA]
+Use [shot size + angle] with [one camera movement] ending on [final composition].
+
+[AUDIO]
+Audio includes [dialogue / ambience / music / sound effect].
+
+[CONTINUITY]
+Keep [face, wardrobe, product geometry, prop count, screen direction] consistent.</pre>
+      <div class="qc-line"><b>QC:</b> one action · one ending · one camera idea · 2–4 physical emotion cues when performance matters.</div>
+    </article>
+
+    <article class="case-card">
+      <div class="case-label"><span>02</span><h3>Multi-scene video generation</h3></div>
+      <p>Use stages as continuity handoffs. Each stage changes exactly one story state.</p>
+      <div class="prompt-toolbar"><b>Stage-to-stage continuity</b><button class="copy-prompt" data-copy-target="sd25-multi">Copy</button></div>
+      <pre class="prompt" id="sd25-multi">[GENERATION GOAL]
+Create a [duration] [video type] about [story outcome].
+
+[GLOBAL CONTINUITY]
+Keep [identity, wardrobe, character count, prop ownership, spatial direction, lighting logic, audio bed] consistent.
+
+[STAGE 1 — SETUP]
+Initial state: [who and what is visible, positions, held props].
+Primary event: [one action].
+End state: [observable positions, expressions, and prop ownership].
+
+[STAGE 2 — DEVELOPMENT]
+Continue from Stage 1: [state that must remain unchanged].
+Primary event: [one action].
+End state: [observable state that Stage 3 can inherit].
+
+[STAGE 3 — PAYOFF]
+Continue from Stage 2: [continuity bridge].
+Primary event: [one action].
+Final frame: [exact hero composition or closing state].
+
+[AUDIO ARC]
+[Dialogue, ambience, music changes, and critical cue timing].</pre>
+      <div class="qc-line"><b>QC:</b> consecutive stages · no overlapping events · each end state supplies the next stage · timestamps only for a critical entrance, handoff, cut, or cue.</div>
+    </article>
+
+    <article class="case-card">
+      <div class="case-label"><span>03</span><h3>Using references properly</h3></div>
+      <p>Assign one job and one exclusion to every reference. Never bind “images 1–4 respectively.”</p>
+      <div class="prompt-toolbar"><b>Role + exclusion binding</b><button class="copy-prompt" data-copy-target="sd25-refs">Copy</button></div>
+      <pre class="prompt" id="sd25-refs">[ASSET MAP]
+@Image 1 defines [subject identity, hair, wardrobe].
+Do not use [background, pose, lighting] from @Image 1.
+
+@Image 2 defines [product geometry, material, logo placement].
+Do not alter [shape, color, label proportions].
+
+@Image 3 defines [location layout, architecture, light direction].
+Do not use [people or products] from @Image 3.
+
+@Video 1 defines [camera path / action pacing / transition behavior].
+Do not use [performer identity, wardrobe, location, or audio] from @Video 1.
+
+@Audio 1 defines [music timing / voice performance / ambience].
+Use only [required audio role].
+
+[GENERATION]
+[Write the standalone or staged prompt here, naming each required asset again at the moment it is used.]</pre>
+      <div class="qc-line"><b>QC:</b> individual bindings · no collages for multiple identity views · motion refs describe inheritance, not a second conflicting motion instruction.</div>
+    </article>
+  </div>
+</div></section>
+
+<section class="model-framework" id="seedance-20" style="--fc:var(--sd20)"><div class="wrap">
+  <header class="model-framework-head">
+    <div><span class="model-code">MODEL ADAPTER 02</span><h2>Seedance 2.0</h2></div>
+    <p><b>Operating principle:</b> use explicit named materials as capability anchors. If motion, camera, timing, or performance matters, attach the asset that carries it.</p>
+  </header>
+  <div class="adapter-rules"><b>Compiler rules:</b> asset labels are case-sensitive · reference assets as <code>@[Exact Name]</code> every time · images anchor identity · video anchors motion/style/time · audio anchors rhythm/performance · keep a single generation within the model’s duration limit.</div>
+
+  <div class="case-grid">
+    <article class="case-card">
+      <div class="case-label"><span>01</span><h3>Standalone video generation</h3></div>
+      <p>Two to three sentences are enough when the shot has one subject and one action.</p>
+      <div class="prompt-toolbar"><b>Single-shot formula</b><button class="copy-prompt" data-copy-target="sd20-single">Copy</button></div>
+      <pre class="prompt" id="sd20-single">[SUBJECT] [performs one precise action] in [environment and lighting].
+
+Camera: [shot size + angle], [one movement], [lens/depth cue].
+
+Performance and finish: [observable expression/body behavior], [mood/style], ending with [visible final state].
+
+Audio: [ambience / dialogue / music / sound effect].
+
+Continuity: exactly [object count]; keep [identity, wardrobe, product geometry, and screen direction] unchanged.</pre>
+      <div class="qc-line"><b>QC:</b> explicit trajectories for fast objects · exact object count before and after contact · plan packaging text for post unless a test proves it.</div>
+    </article>
+
+    <article class="case-card">
+      <div class="case-label"><span>02</span><h3>Multi-scene video generation</h3></div>
+      <p>Write the edit, not a paragraph. Give every shot timing, camera, subject anchor, one action, and its handoff.</p>
+      <div class="prompt-toolbar"><b>Timed shot sequence</b><button class="copy-prompt" data-copy-target="sd20-multi">Copy</button></div>
+      <pre class="prompt" id="sd20-multi">[GLOBAL]
+Create a [duration] [aspect ratio] [video type]. Maintain [identity, product, wardrobe, palette, world, and screen direction] across every shot.
+
+[SHOT 1 — 00:00–00:03 — SETUP]
+[Shot size + camera move]. [Subject anchor] [one action].
+End on [handoff frame/state].
+
+[SHOT 2 — 00:03–00:07 — DEVELOPMENT]
+Begin from [handoff state]. [Shot size + camera move]. [One action].
+End on [handoff frame/state].
+
+[SHOT 3 — 00:07–00:12 — PAYOFF]
+Begin from [handoff state]. [Shot size + camera move]. [One action].
+Finish on [hero frame / CTA-safe composition].
+
+[EDIT + AUDIO]
+Cuts follow [visual action / @[BeatTrack] cue]. At [timecode], [specific cut or sound event].</pre>
+      <div class="qc-line"><b>QC:</b> time ranges add up · one action per shot · every shot opens from the previous handoff · slow-motion physics shots get extra roll budget.</div>
+    </article>
+
+    <article class="case-card">
+      <div class="case-label"><span>03</span><h3>Using references properly</h3></div>
+      <p>Label assets before prompting. Exact names behave like variables and must be called every time.</p>
+      <div class="prompt-toolbar"><b>Named-material routing</b><button class="copy-prompt" data-copy-target="sd20-refs">Copy</button></div>
+      <pre class="prompt" id="sd20-refs">[ASSET REGISTRY]
+@[Hero] = identity and wardrobe anchor from [image set].
+@[Product] = product shape, materials, color, and logo placement.
+@[Location] = environment layout and lighting reference.
+@[CameraRef] = camera path only; ignore subject and location.
+@[StyleClip] = transition or VFX behavior only.
+@[Voice] = dialogue timing, lip-sync, and emotional performance.
+@[BeatTrack] = music and cut timing.
+
+[GENERATION]
+@[Hero] enters @[Location] carrying @[Product].
+Use the @[CameraRef] camera path: [speed and duration].
+At @[BeatTrack] [timecode/cue], cut to [shot].
+Reproduce only the [effect] from @[StyleClip] to reveal @[Product].
+Drive lip-sync and facial performance from @[Voice].
+
+[PRESERVE]
+Keep @[Hero] and @[Product] consistent in every shot. Do not inherit identity, wardrobe, location, or audio from motion/style references.</pre>
+      <div class="qc-line"><b>QC:</b> exact label spelling and case · every used asset appears in the registry · every motion/style asset has an exclusion · image references match the intended aspect ratio.</div>
+    </article>
+  </div>
+</div></section>
+
+<section class="model-framework" id="kling-3" style="--fc:var(--kling)"><div class="wrap">
+  <header class="model-framework-head">
+    <div><span class="model-code">MODEL ADAPTER 03</span><h2>Kling 3.0</h2></div>
+    <p><b>Operating principle:</b> think in shots, not paragraphs. Camera grammar, explicit motion, lighting physics, and identity re-anchoring drive consistency.</p>
+  </header>
+  <div class="adapter-rules"><b>Compiler rules:</b> begin every shot with framing and camera · use one dominant action · specify lighting quality, source, direction, and ratio · re-anchor named characters in every shot · use explicit body mechanics instead of vague verbs.</div>
+
+  <div class="case-grid">
+    <article class="case-card">
+      <div class="case-label"><span>01</span><h3>Standalone video generation</h3></div>
+      <p>Camera first, then identity, action, environment, and four-dimensional lighting.</p>
+      <div class="prompt-toolbar"><b>Cinematic shot card</b><button class="copy-prompt" data-copy-target="kling-single">Copy</button></div>
+      <pre class="prompt" id="kling-single">[SHOT SIZE + ANGLE + CAMERA MOVEMENT]
+[Named subject with defining identity and wardrobe] [performs one action using explicit body mechanics].
+
+[ENVIRONMENT]
+[Location, time, weather, background behavior, atmosphere].
+
+[LIGHTING]
+Quality: [hard / soft / diffused / contrasty].
+Source: [window / practical / sun / neon / fire].
+Direction: [side key / backlight / top-light / Rembrandt].
+Ratio: [1:1 flat / 1:4 dramatic / 1:8 chiaroscuro].
+
+[FINISH]
+[Texture, color grade, lens behavior]. End on [exact final composition].
+
+[AUDIO]
+[Dialogue delivery, ambience, music, sound effects].</pre>
+      <div class="qc-line"><b>QC:</b> replace “walks,” “turns,” or “looks emotional” with mechanics · one lighting plan · one camera path · explicit final frame.</div>
+    </article>
+
+    <article class="case-card">
+      <div class="case-label"><span>02</span><h3>Multi-scene video generation</h3></div>
+      <p>Use up to six labeled shots. Re-state identity and wardrobe at the start of every shot.</p>
+      <div class="prompt-toolbar"><b>Six-shot storyboard</b><button class="copy-prompt" data-copy-target="kling-multi">Copy</button></div>
+      <pre class="prompt" id="kling-multi">[GLOBAL CONTINUITY]
+Maintain [palette, product geometry, wardrobe, time of day, screen direction, and audio bed] throughout.
+
+SHOT 1 — [duration] — [shot size + angle + movement]
+[NAME] ([identity + wardrobe anchor]) [one explicit action].
+Lighting: [quality, source, direction, ratio].
+End frame: [handoff state].
+
+SHOT 2 — [duration] — [shot size + angle + movement]
+[NAME] ([repeat identity + wardrobe anchor]) begins from [handoff state] and [one explicit action].
+Lighting: [same logic or motivated change].
+End frame: [handoff state].
+
+SHOT 3 — [duration] — [shot size + angle + movement]
+[NAME] ([repeat identity + wardrobe anchor]) [one explicit action].
+Finish on [hero frame].
+
+[DIALOGUE FORMAT WHEN USED]
+[NAME] is [body position + gaze].
+[NAME] (delivery: [tone, pace, volume]): "[line sized to shot duration]"</pre>
+      <div class="qc-line"><b>QC:</b> every shot has label + duration + camera + identity anchor + one action · short lines fit the time budget · reaction beats get their own shot.</div>
+    </article>
+
+    <article class="case-card">
+      <div class="case-label"><span>03</span><h3>Using references properly</h3></div>
+      <p>Separate the opening composition from reusable identities. Re-anchor each Element per segment.</p>
+      <div class="prompt-toolbar"><b>Three-layer input system</b><button class="copy-prompt" data-copy-target="kling-refs">Copy</button></div>
+      <pre class="prompt" id="kling-refs">[LAYER 1 — START IMAGE]
+start_image_url defines the literal opening 16:9 composition: [what is visibly present].
+Animate from this frame; do not redesign [locked composition or product details].
+
+[LAYER 2 — ELEMENTS]
+@Element1 = [Character A identity]. Source set: frontal close-up + full-body/side view, all 1:1.
+@Element2 = [Character B identity]. Source set: frontal close-up + full-body/side view, all 1:1.
+@Element3 = [Product identity]. Preserve [shape, finish, color, logo placement].
+
+[LAYER 3 — SHOT SEGMENTS]
+SHOT 1 — [duration] — [camera]
+@Element1 [identity shorthand] interacts with @Element3 by [one action].
+
+SHOT 2 — [duration] — [camera]
+@Element1 [identity shorthand] and @Element2 [identity shorthand] [one action].
+
+[EXCLUSIONS]
+Use Elements for identity only. Do not inherit source backgrounds, poses, crops, or lighting unless explicitly assigned.</pre>
+      <div class="qc-line"><b>QC:</b> start frame is 16:9 · Element sources share 1:1 geometry · Elements use upload-order names · every character is re-called in every shot where they appear.</div>
+    </article>
+  </div>
+</div></section>
+
+<section class="model-framework" id="omni-11" style="--fc:var(--omni)"><div class="wrap">
+  <header class="model-framework-head">
+    <div><span class="model-code">MODEL ADAPTER 04</span><h2>Google Omni 1.1</h2></div>
+    <p><b>Operating principle:</b> state the creative intent, constrain only what matters, and let the model direct the connective detail. Use specificity as a lock—not as filler.</p>
+  </header>
+  <div class="adapter-rules"><b>Compiler rules:</b> one evocative phrase per axis · action is mandatory; add only 1–3 other axes unless art direction must be locked · duration can be stated in words · aspect ratio/task belong in API fields when available · reference roles must distinguish literal first frame from reusable imagery.</div>
+
+  <div class="case-grid">
+    <article class="case-card">
+      <div class="case-label"><span>01</span><h3>Standalone video generation</h3></div>
+      <p>Use the shortest prompt that still protects the creative idea and non-negotiable art direction.</p>
+      <div class="prompt-toolbar"><b>Intent-led generate prompt</b><button class="copy-prompt" data-copy-target="omni-single">Copy</button></div>
+      <pre class="prompt" id="omni-single">[DURATION] [ASPECT RATIO] video.
+
+[One clear action] in [one specific location].
+
+Camera: [shot framing] with [one movement or coverage intention].
+
+Feel: [one evocative style phrase].
+
+Light: [source + quality].
+
+Audio: [dialogue / ambience / music / silence intention].
+
+Keep [identity, product, wardrobe, or text] exact.
+Do not show [specific prohibited content].</pre>
+      <div class="qc-line"><b>QC:</b> action first · no synonym chains · under-specify for model-directed coverage · over-specify only the features that must be locked.</div>
+    </article>
+
+    <article class="case-card">
+      <div class="case-label"><span>02</span><h3>Multi-scene video generation</h3></div>
+      <p>Give Omni a beat sheet with order and outcomes. Let it direct coverage within each beat.</p>
+      <div class="prompt-toolbar"><b>Ordered beat sheet</b><button class="copy-prompt" data-copy-target="omni-multi">Copy</button></div>
+      <pre class="prompt" id="omni-multi">Create a [duration] [aspect ratio] [video type] that communicates [single creative intent].
+
+Follow these story beats exactly in order:
+1. SETUP — [who, where, and the opening state]. End when [visible state].
+2. DEVELOPMENT — [one state-changing action]. End when [visible state].
+3. PAYOFF — [one final action or reveal]. Finish on [hero image / final state].
+
+Direct cinematic coverage for each beat using [coverage character: intimate / kinetic / observational].
+
+Maintain [identity, wardrobe, product geometry, palette, and world rules] across all beats.
+
+Audio arc: [ambience/music/dialogue changes tied to beats].
+Do not add [unwanted characters, locations, text, or plot events].</pre>
+      <div class="qc-line"><b>QC:</b> beats—not frame-by-frame micromanagement · exact order · visible end states · long narratives become a chain of short generations seeded from the last approved frame.</div>
+    </article>
+
+    <article class="case-card">
+      <div class="case-label"><span>03</span><h3>Using references properly</h3></div>
+      <p>Declare whether an image is the literal first frame or a reusable subject/style reference.</p>
+      <div class="prompt-toolbar"><b>First-frame + image-reference roles</b><button class="copy-prompt" data-copy-target="omni-refs">Copy</button></div>
+      <pre class="prompt" id="omni-refs">[# SOURCES]
+&lt;FIRST_FRAME&gt; @Image1 = literal opening frame. Preserve [composition, subject position, product placement, lighting].
+
+[# REFERENCES]
+&lt;IMAGE_REF_0&gt; @Image2 = [character identity and wardrobe] only. Do not use its background or pose.
+&lt;IMAGE_REF_1&gt; @Image3 = [product geometry, finish, and logo placement] only.
+&lt;IMAGE_REF_2&gt; @Image4 = [visual style / palette / material language] only.
+
+[# GENERATION]
+Beginning from &lt;FIRST_FRAME&gt;, &lt;IMAGE_REF_0&gt; [performs one action] with &lt;IMAGE_REF_1&gt; in [location].
+Use &lt;IMAGE_REF_2&gt; for [specific visual attribute], not for composition.
+
+Camera: [framing + one movement].
+End on [visible final state].
+
+Do not reinterpret [locked identity/product feature]. Do not use reference backgrounds, poses, crops, or extra subjects.</pre>
+      <div class="qc-line"><b>QC:</b> first frame and references are never conflated · every image has one job · look/style is supplied separately from a storyboard · short on-screen text only.</div>
+    </article>
+  </div>
+</div></section>
+
+<section id="handoff"><div class="wrap">
+  <div class="sec-head"><span class="num">99</span><h2 class="sec-title">Workflow handoff checklist</h2></div>
+  <div class="handoff-grid mt-m">
+    <div><b>Brief check</b><span>Purpose, platform, duration, ratio, and non-negotiable outcome are explicit.</span></div>
+    <div><b>Shot check</b><span>Every shot or stage has one action, a camera plan, and a visible end state.</span></div>
+    <div><b>Asset check</b><span>Every asset has a unique label, one primary job, and exclusions.</span></div>
+    <div><b>Continuity check</b><span>Identity, wardrobe, product geometry, props, direction, and world logic are anchored.</span></div>
+    <div><b>Model check</b><span>The prompt uses only the selected model’s syntax and supported controls.</span></div>
+    <div><b>Delivery check</b><span>Settings live in the correct UI/API fields, and the generation has a defined QC failure gate.</span></div>
+  </div>
+</div></section>
+</main>
+
+<footer class="site"><div class="wrap">
+  <span>Battle of the Models · QuickFrame AI prompt operations</span>
+  <span><a href="index.html">Return to the fight card</a></span>
+</div></footer>
+
+<script>
+document.querySelectorAll('.copy-prompt').forEach((button) => {
+  button.addEventListener('click', async () => {
+    const target = document.getElementById(button.dataset.copyTarget);
+    if (!target) return;
+    const original = button.textContent;
+    try {
+      await navigator.clipboard.writeText(target.innerText);
+      button.textContent = 'Copied';
+    } catch {
+      button.textContent = 'Select and copy';
+    }
+    window.setTimeout(() => { button.textContent = original; }, 1600);
+  });
+});
+</script>
+</body>
+</html>
